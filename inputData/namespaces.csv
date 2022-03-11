@@ -1,0 +1,28 @@
+prefix,URI,Note
+sh,http://www.w3.org/ns/shacl#,
+rdf,http://www.w3.org/1999/02/22-rdf-syntax-ns#,
+rdfs,http://www.w3.org/2000/01/rdf-schema#,
+xsd,http://www.w3.org/2001/XMLSchema#,
+ceterms,https://purl.org/ctdl/terms/,
+agentSector,https://purl.org/ctdl/vocabs/agentSector/,
+orgType,https://purl.org/ctdl/vocabs/orgType/,
+,https://raw.githubusercontent.com/philbarker/CTDLValidation/main/shapes/credOrg_req.ttl,default
+asn,http://purl.org/ASN/schema/core/,Achievement Standards Network
+case,https://purl.imsglobal.org/spec/case/,IMS Global CASE
+ceasn,https://purl.org/ctdlasn/terms/,CTDL Profile of Achievement Standards Network Description Language
+ceds,https://ceds.ed.gov/element/,Common Education Data Standards (CEDS) Schema Elements
+cs,http://vocab.org/changeset/schema#,Change Set
+dc,http://purl.org/dc/elements/1.1/,"Dublin Core Metadata Element Set, Version 1.1"
+dct,http://purl.org/dc/terms/,DCMI Metadata Terms
+foaf,http://xmlns.com/foaf/0.1/,Friend of a Friend
+gemq,http://purl.org/gem/qualifiers/,GEM Qualified Terms
+lrmi,http://purl.org/dcx/lrmi-terms/,Learning Resource Metadata Initiative
+meta,http://credreg.net/meta/terms/,Credential Engine Meta Terms
+obi,https://w3id.org/openbadges#,Open Badges Technical Specification (Schema)
+owl,http://www.w3.org/2002/07/owl#,Ontology Web Language
+qdata,https://credreg.net/qdata/terms/,Quantitative Data Schema
+schema,https://schema.org/,Schema.org
+skos,http://www.w3.org/2004/02/skos/core#,Simple Knowledge Organization System
+vann,http://purl.org/vocab/vann/,Web Annotation Vocabulary
+vs,https://www.w3.org/2003/06/sw-vocab-status/ns#,Term-centric Semantic Web Vocabulary Annotations
+xsd,http://www.w3.org/2001/XMLSchema#,XML Schema Definition
