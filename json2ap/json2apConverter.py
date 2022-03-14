@@ -1,6 +1,7 @@
-from AP import AP, PropertyStatement
+from AP import AP, PropertyStatement, ShapeInfo
 from csv import DictReader
 from os.path import exists
+from urllib.parse import quote
 import json
 
 
@@ -41,7 +42,12 @@ class JSON2APConverter:
         self.cr_json = json.loads(json_data)
 
     def convert_class(self, class_data, level="required"):
-        if level not in ["required", "recommended", "optional"]:
+        levels = {
+            "required": "constraintType:RequiresProperty",
+            "recommended": "constraintType:RecommendsProperty",
+            "optional": "constraintType:OptionalProperty",
+        }
+        if level not in levels.keys():
             print(level)
             msg = "Importance level must be one of required, recommended, or optional."
             raise ValueError(msg)
@@ -54,3 +60,21 @@ class JSON2APConverter:
         print(description)
         self.ap.add_metadata("dct:title", title)
         self.ap.add_metadata("dct:description", description)
+        # add top shape for main class
+        shape_id = quote(class_data["Label"].title().replace(" ", "") + "Shape")
+        shapeInfo = ShapeInfo()
+        shapeInfo.set_id(shape_id)
+        shapeInfo.add_label("en", class_data["Label"])
+        shapeInfo.add_comment("en", "Shape for " + class_data["Definition"].lower())
+        shapeInfo.append_target(class_data["URI"], "class")
+        shapeInfo.set_closed("false")
+        shapeInfo.set_mandatory("true")
+        shapeInfo.set_severity("violation")
+        self.ap.add_shapeInfo(shape_id, shapeInfo)
+        # add properties for main shape
+        for p in class_data["PropertySets"]:
+            if p["ImportanceLevel"] == levels[level]:
+                ps = PropertyStatement
+                ps.add_shape(shape_id)
+                ps.add_label("en", p["label"])
+                ps.add_severity("violation")

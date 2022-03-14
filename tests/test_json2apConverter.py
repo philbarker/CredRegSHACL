@@ -55,6 +55,13 @@ def test_convert_class(test_converter):
         c.ap.metadata["dct:description"]
         == "Required properties for Organization that plays one or more key roles in the lifecycle of a credential."
     )
+    assert (
+        c.ap.shapeInfo["CredentialOrganizationShape"].id
+        == "CredentialOrganizationShape"
+    )
+    assert c.ap.shapeInfo["CredentialOrganizationShape"].targets == {
+        "class": "ceterms:CredentialOrganization"
+    }
     with pytest.raises(ValueError) as e:
         c.convert_class(class_data, level="important")
     assert (
