@@ -6648,7 +6648,7 @@
           {
             "Label": "Advanced Standing From",
             "Definition": "Credential that has its time or cost reduced by another credential, assessment or learning opportunity.",
-            "ImportanceLevel": "constraintType:RecommendsProperty",
+            "ImportanceLevel": "constraintType:RequiressProperty",
             "StatusURI": "vs:stable",
             "PropertyURIs": [
               "ceterms:advancedStandingFrom"
