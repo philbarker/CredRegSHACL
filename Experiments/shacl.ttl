@@ -1,0 +1,22 @@
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix ex: <http://example.org/> .
+@prefix ceterms: <https://purl.org/ceterms/> .
+
+ex:credentialShape a sh:NodeShape ;
+    sh:targetClass ceterms:AssociateDegree, ceterms:Credential ;
+    sh:property ex:credentialNameShape, ex:credentialDescriptionShape .
+
+ex:credentialNameShape a sh:PropertyShape ;
+    sh:path ceterms:name ;
+    sh:minCount 1 ;
+    sh:maxCount 1 ;
+    sh:datatype xsd:string ;
+    sh:name "Credential name" .
+
+ex:credentialDescriptionShape a sh:PropertyShape ;
+    sh:path ceterms:description ;
+    sh:minCount 1 ;
+    sh:maxCount 1 ;
+    sh:datatype xsd:string ;
+    sh:name "Credential description" .
