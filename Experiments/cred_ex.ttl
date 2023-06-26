@@ -1,0 +1,186 @@
+@prefix audLevel: <https://purl.org/ctdl/vocabs/audLevel/> .
+@prefix ceterms: <https://purl.org/ctdl/terms/> .
+@prefix credentialStat: <https://purl.org/ctdl/vocabs/credentialStat/> .
+@prefix schema: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<https://credentialengineregistry.org/resources/ce-3877cdec-09b6-45df-814f-ede85c023858> a ceterms:Certification ;
+    ceterms:audienceLevelType [ a ceterms:CredentialAlignmentObject ;
+            ceterms:framework <https://credreg.net/ctdl/terms/AudienceLevel> ;
+            ceterms:frameworkName "AudienceLevel"@en-US ;
+            ceterms:targetNode audLevel:BeginnerLevel ;
+            ceterms:targetNodeName "Beginner Level"@en-US ],
+        [ a ceterms:CredentialAlignmentObject ;
+            ceterms:framework <https://credreg.net/ctdl/terms/AudienceLevel> ;
+            ceterms:frameworkName "AudienceLevel"@en-US ;
+            ceterms:targetNode audLevel:BachelorsDegreeLevel ;
+            ceterms:targetNodeName "Bachelors Degree Level"@en-US ],
+        [ a ceterms:CredentialAlignmentObject ;
+            ceterms:framework <https://credreg.net/ctdl/terms/AudienceLevel> ;
+            ceterms:frameworkName "AudienceLevel"@en-US ;
+            ceterms:targetNode audLevel:PostSecondaryLevel ;
+            ceterms:targetNodeName "Post-Secondary Level"@en-US ],
+        [ a ceterms:CredentialAlignmentObject ;
+            ceterms:framework <https://credreg.net/ctdl/terms/AudienceLevel> ;
+            ceterms:frameworkName "AudienceLevel"@en-US ;
+            ceterms:targetNode audLevel:AssociatesDegreeLevel ;
+            ceterms:targetNodeName "Associates Degree Level"@en-US ],
+        [ a ceterms:CredentialAlignmentObject ;
+            ceterms:framework <https://credreg.net/ctdl/terms/AudienceLevel> ;
+            ceterms:frameworkName "AudienceLevel"@en-US ;
+            ceterms:targetNode audLevel:LowerDivisionLevel ;
+            ceterms:targetNodeName "Lower Division Level"@en-US ],
+        [ a ceterms:CredentialAlignmentObject ;
+            ceterms:framework <https://credreg.net/ctdl/terms/AudienceLevel> ;
+            ceterms:frameworkName "AudienceLevel"@en-US ;
+            ceterms:targetNode audLevel:ProfessionalLevel ;
+            ceterms:targetNodeName "Professional Level"@en-US ],
+        [ a ceterms:CredentialAlignmentObject ;
+            ceterms:framework <https://credreg.net/ctdl/terms/AudienceLevel> ;
+            ceterms:frameworkName "AudienceLevel"@en-US ;
+            ceterms:targetNode audLevel:IntermediateLevel ;
+            ceterms:targetNodeName "Intermediate Level"@en-US ],
+        [ a ceterms:CredentialAlignmentObject ;
+            ceterms:framework <https://credreg.net/ctdl/terms/AudienceLevel> ;
+            ceterms:frameworkName "AudienceLevel"@en-US ;
+            ceterms:targetNode audLevel:UndergraduateLevel ;
+            ceterms:targetNodeName "Undergraduate Level"@en-US ] ;
+    ceterms:copyrightHolder <https://credentialengineregistry.org/resources/ce-186fbc60-47e3-4616-b160-72cac9e78f54> ;
+    ceterms:credentialStatusType [ a ceterms:CredentialAlignmentObject ;
+            ceterms:framework <https://credreg.net/ctdl/terms/CredentialStatus> ;
+            ceterms:frameworkName "CredentialStatus"@en-US ;
+            ceterms:targetNode credentialStat:Active ;
+            ceterms:targetNodeName "Active"@en-US ] ;
+    ceterms:ctid "ce-3877cdec-09b6-45df-814f-ede85c023858"^^xsd:string ;
+    ceterms:description "Held by over 1​ million IT professionals worldwide, CompTIA A+ is the most essential IT certification for establishing an IT career. If you're new to the IT industry, this will help you put your best foot forward. And if you're already an IT professional, the CompTIA A+ certification validates your skills and can boost your career."@en-US ;
+    ceterms:estimatedDuration [ a ceterms:DurationProfile ;
+            ceterms:description "Two 90 minute exams."@en-US ;
+            ceterms:exactDuration "PT180M"^^schema:Duration ] ;
+    ceterms:image <https://certification.comptia.org/UI/Assets/siteIcons/logoAPlus.svg> ;
+    ceterms:inLanguage "en"^^xsd:language ;
+    ceterms:industryType [ a ceterms:CredentialAlignmentObject ;
+            ceterms:codedNotation "541512"^^xsd:string ;
+            ceterms:framework <https://www.census.gov/eos/www/naics/> ;
+            ceterms:frameworkName "NAICS"@en-US ;
+            ceterms:targetNode <https://www.census.gov/cgi-bin/sssd/naics/naicsrch?code=541512&search=2017> ;
+            ceterms:targetNodeDescription "Computer Systems Design Services"@en-US ;
+            ceterms:targetNodeName "Computer Systems Design Services"@en-US ],
+        [ a ceterms:CredentialAlignmentObject ;
+            ceterms:codedNotation "541511"^^xsd:string ;
+            ceterms:framework <https://www.census.gov/eos/www/naics/> ;
+            ceterms:frameworkName "NAICS"@en-US ;
+            ceterms:targetNode <https://www.census.gov/cgi-bin/sssd/naics/naicsrch?code=541511&search=2017> ;
+            ceterms:targetNodeDescription "Custom Computer Programming Services"@en-US ;
+            ceterms:targetNodeName "Custom Computer Programming Services"@en-US ],
+        [ a ceterms:CredentialAlignmentObject ;
+            ceterms:codedNotation "519"^^xsd:string ;
+            ceterms:framework <https://www.census.gov/eos/www/naics/> ;
+            ceterms:frameworkName "NAICS"@en-US ;
+            ceterms:targetNode <https://www.census.gov/cgi-bin/sssd/naics/naicsrch?code=519&search=2017> ;
+            ceterms:targetNodeDescription "Other Information Services"@en-US ;
+            ceterms:targetNodeName "Other Information Services"@en-US ] ;
+    ceterms:isPartOf <https://credentialengineregistry.org/resources/ce-5bd8c9ce-120e-466e-b13f-c4ab0536d86c>,
+        <https://credentialengineregistry.org/resources/ce-c52e34df-6dd4-4ed3-bf2c-a00759da6be4>,
+        <https://credentialengineregistry.org/resources/ce-cb8eb8d0-208d-4da0-9f50-7003f8a39ed6>,
+        <https://credentialengineregistry.org/resources/ce-ece24433-298c-4c0c-9304-fb2d854992b8>,
+        <https://credentialengineregistry.org/resources/ce-fbb5fe66-fd29-4393-aca9-64995242c7f7> ;
+    ceterms:isRequiredFor [ a ceterms:ConditionProfile ;
+            ceterms:description "CompTIA A+ 'Is Required For'  credential  'CompTIA Linux+'"@en-US ;
+            ceterms:name "Additional Requirements"@en-US ;
+            ceterms:targetCredential <https://credentialengineregistry.org/resources/ce-195f53a7-0635-46f6-9706-e3ddf881683f> ],
+        [ a ceterms:ConditionProfile ;
+            ceterms:description "CompTIA A+ 'Is Required For'  credential  'CompTIA Network+'"@en-US ;
+            ceterms:name "Additional Requirements"@en-US ;
+            ceterms:targetCredential <https://credentialengineregistry.org/resources/ce-1422b7b0-c803-4d05-8728-0c8b1134a174> ],
+        [ a ceterms:ConditionProfile ;
+            ceterms:description "CompTIA A+ 'Is Required For'  credential  'T.C. in Informatics'"@en-US ;
+            ceterms:name "Additional Requirements"@en-US ;
+            ceterms:targetCredential <https://credentialengineregistry.org/resources/ce-b7503ca8-c9c2-4368-8f74-cb0cae759f7e> ],
+        [ a ceterms:ConditionProfile ;
+            ceterms:description "CompTIA A+ 'Is Required For'  credential  'T.C. in Server Administration'"@en-US ;
+            ceterms:name "Additional Requirements"@en-US ;
+            ceterms:targetCredential <https://credentialengineregistry.org/resources/ce-8be7e3c8-ae71-41b4-b2f7-7fa6d4f825d1> ],
+        [ a ceterms:ConditionProfile ;
+            ceterms:description "CompTIA A+ 'Is Required For'  credential  'Certificate in Information Technology Support - Help Desk'"@en-US ;
+            ceterms:name "Additional Requirements"@en-US ;
+            ceterms:targetCredential <https://credentialengineregistry.org/resources/ce-76c3abe3-6d89-4185-91e0-26e1e6483f60> ],
+        [ a ceterms:ConditionProfile ;
+            ceterms:description "CompTIA A+ 'Is Required For'  credential  'T.C. in Information Technology Support'"@en-US ;
+            ceterms:name "Additional Requirements"@en-US ;
+            ceterms:targetCredential <https://credentialengineregistry.org/resources/ce-fb431321-0daf-4f4c-8371-35aebd8cf311> ],
+        [ a ceterms:ConditionProfile ;
+            ceterms:description "CompTIA A+ 'Is Required For'  credential  'Certificate in Digital Forensics'"@en-US ;
+            ceterms:name "Additional Requirements"@en-US ;
+            ceterms:targetCredential <https://credentialengineregistry.org/resources/ce-792233f2-aa94-42e4-9608-7977e73c4244> ] ;
+    ceterms:jurisdiction [ a ceterms:JurisdictionProfile ;
+            ceterms:globalJurisdiction true ] ;
+    ceterms:naics "519"^^xsd:string,
+        "541511"^^xsd:string,
+        "541512"^^xsd:string ;
+    ceterms:name "CompTIA A+"@en-US ;
+    ceterms:occupationType [ a ceterms:CredentialAlignmentObject ;
+            ceterms:codedNotation "15-1151.00"^^xsd:string ;
+            ceterms:framework <https://www.bls.gov/soc/> ;
+            ceterms:frameworkName "Standard Occupational Classification"@en-US ;
+            ceterms:targetNode <https://www.onetonline.org/link/summary/15-1151.00> ;
+            ceterms:targetNodeDescription "Provide technical assistance to computer users. Answer questions or resolve computer problems for clients in person, or via telephone or electronically. May provide assistance concerning the use of computer hardware and software, including printing, installation, word processing, electronic mail, and operating systems."@en-US ;
+            ceterms:targetNodeName "Computer User Support Specialists"@en-US ],
+        [ a ceterms:CredentialAlignmentObject ;
+            ceterms:codedNotation "15-1199.00"^^xsd:string ;
+            ceterms:framework <https://www.bls.gov/soc/> ;
+            ceterms:frameworkName "Standard Occupational Classification"@en-US ;
+            ceterms:targetNode <https://www.onetonline.org/link/summary/15-1199.00> ;
+            ceterms:targetNodeDescription "All computer occupations not listed separately."@en-US ;
+            ceterms:targetNodeName "Computer Occupations, All Other"@en-US ],
+        [ a ceterms:CredentialAlignmentObject ;
+            ceterms:codedNotation "15-1152.00"^^xsd:string ;
+            ceterms:framework <https://www.bls.gov/soc/> ;
+            ceterms:frameworkName "Standard Occupational Classification"@en-US ;
+            ceterms:targetNode <https://www.onetonline.org/link/summary/15-1152.00> ;
+            ceterms:targetNodeDescription "Analyze, test, troubleshoot, and evaluate existing network systems, such as local area network (LAN), wide area network (WAN), and Internet systems or a segment of a network system. Perform network maintenance to ensure networks operate correctly with minimal interruption."@en-US ;
+            ceterms:targetNodeName "Computer Network Support Specialists"@en-US ],
+        [ a ceterms:CredentialAlignmentObject ;
+            ceterms:codedNotation "15-1143.01"^^xsd:string ;
+            ceterms:framework <https://www.bls.gov/soc/> ;
+            ceterms:frameworkName "Standard Occupational Classification"@en-US ;
+            ceterms:targetNode <https://www.onetonline.org/link/summary/15-1143.01> ;
+            ceterms:targetNodeDescription "Design or configure voice, video, and data communications systems. Supervise installation and post-installation service and maintenance."@en-US ;
+            ceterms:targetNodeName "Telecommunications Engineering Specialists"@en-US ] ;
+    ceterms:offeredBy <https://credentialengineregistry.org/resources/ce-186fbc60-47e3-4616-b160-72cac9e78f54> ;
+    ceterms:ownedBy <https://credentialengineregistry.org/resources/ce-186fbc60-47e3-4616-b160-72cac9e78f54> ;
+    ceterms:preparationFrom [ a ceterms:ConditionProfile ;
+            ceterms:description "CompTIA A+ 'Preparation From'  learning opportunity  'CTE - Computer Systems Networking and Telecommunications'"@en-US ;
+            ceterms:name "Additional Requirements"@en-US ;
+            ceterms:targetLearningOpportunity <https://credentialengineregistry.org/resources/ce-c2882316-66f0-4a9b-bce3-c47d9fa66c26> ],
+        [ a ceterms:ConditionProfile ;
+            ceterms:description "CompTIA A+ 'Preparation From'  credential  'Associate of Applied Science in Information Technology'"@en-US ;
+            ceterms:name "Additional Requirements"@en-US ;
+            ceterms:targetCredential <https://credentialengineregistry.org/resources/ce-66133e0b-67cb-4b65-b36f-29d1c53a9d6e> ],
+        [ a ceterms:ConditionProfile ;
+            ceterms:description "CompTIA A+ 'Preparation From'  credential  'Certificate in Network Penetration'"@en-US ;
+            ceterms:name "Additional Requirements"@en-US ;
+            ceterms:targetCredential <https://credentialengineregistry.org/resources/ce-31613a70-51e1-499d-aa25-ecef75552928> ],
+        [ a ceterms:ConditionProfile ;
+            ceterms:description "CompTIA A+ 'Preparation From'  learning opportunity  'CTE - Computer Systems Networking and Telecommunications'"@en-US ;
+            ceterms:name "Additional Requirements"@en-US ;
+            ceterms:targetLearningOpportunity <https://credentialengineregistry.org/resources/ce-c2882316-66f0-4a9b-bce3-c47d9fa66c26> ],
+        [ a ceterms:ConditionProfile ;
+            ceterms:description "CompTIA A+ 'Preparation From'  learning opportunity  'CTE - Computer and Information Systems Security/Information Assurance'"@en-US ;
+            ceterms:name "Additional Requirements"@en-US ;
+            ceterms:targetLearningOpportunity <https://credentialengineregistry.org/resources/ce-4c1f2b91-185d-4f26-a961-b8b7a0775b13> ],
+        [ a ceterms:ConditionProfile ;
+            ceterms:description "CompTIA A+ 'Preparation From'  credential  'B.S. in Information Technologies'"@en-US ;
+            ceterms:name "Additional Requirements"@en-US ;
+            ceterms:targetCredential <https://credentialengineregistry.org/resources/ce-a27d3eca-20b0-49fb-acdd-6b1bff041198> ],
+        [ a ceterms:ConditionProfile ;
+            ceterms:description "CompTIA A+ 'Preparation From'  credential  'T.C. in Cyber Security Information Assurance'"@en-US ;
+            ceterms:name "Additional Requirements"@en-US ;
+            ceterms:targetCredential <https://credentialengineregistry.org/resources/ce-3e295401-f3fe-4814-bc60-64a30ad5b74a> ],
+        [ a ceterms:ConditionProfile ;
+            ceterms:description "CompTIA A+ 'Preparation From'  credential  'Certificate in Network Security'"@en-US ;
+            ceterms:name "Additional Requirements"@en-US ;
+            ceterms:targetCredential <https://credentialengineregistry.org/resources/ce-0fd063a3-4571-4f1b-960b-d3b6ca3fa2b2> ] ;
+    ceterms:revokedBy <https://credentialengineregistry.org/resources/ce-186fbc60-47e3-4616-b160-72cac9e78f54> ;
+    ceterms:sameAs <https://www.credly.com/org/comptia/badge/comptia-a-ce-certification.1> ;
+    ceterms:subjectWebpage <https://certification.comptia.org/certifications/a> .
+

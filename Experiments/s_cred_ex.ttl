@@ -1,0 +1,23 @@
+@prefix audLevel: <https://purl.org/ctdl/vocabs/audLevel/> .
+@prefix ceterms: <https://purl.org/ctdl/terms/> .
+@prefix credentialStat: <https://purl.org/ctdl/vocabs/credentialStat/> .
+@prefix schema: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<https://credentialengineregistry.org/resources/ce-3877cdec-09b6-45df-814f-ede85c023858> a ceterms:Certification ;
+    ceterms:ctid "ce-3877cdec-09b6-45df-814f-ede85c023858"^^xsd:string ;
+    ceterms:description "Held by over 1​ million IT professionals worldwide, CompTIA A+ is the most essential IT certification for establishing an IT career. If you're new to the IT industry, this will help you put your best foot forward. And if you're already an IT professional, the CompTIA A+ certification validates your skills and can boost your career."@en-US ;
+    ceterms:name "CompTIA A+"@en-US ;
+    ceterms:offeredBy <https://credentialengineregistry.org/resources/ce-186fbc60-47e3-4616-b160-72cac9e78f54> ;
+    ceterms:ownedBy <https://credentialengineregistry.org/resources/ce-186fbc60-47e3-4616-b160-72cac9e78f54> ;
+    ceterms:subjectWebpage <https://certification.comptia.org/certifications/a> ;
+    ceterms:credentialStatusType [ a ceterms:CredentialAlignmentObject ;
+            ceterms:framework <https://credreg.net/ctdl/terms/CredentialStatus> ;
+            ceterms:frameworkName "CredentialStatus"@en-US ;
+            ceterms:targetNode credentialStat:Active ;
+            ceterms:targetNodeName "Active"@en-US 
+        ] ;
+    ceterms:inLanguage "en"^^xsd:language ;
+
+.
+

@@ -1,22 +1,95 @@
+# general namespaces
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix sh: <http://www.w3.org/ns/shacl#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
-@prefix ex: <http://example.org/> .
-@prefix ceterms: <https://purl.org/ceterms/> .
 
-ex:credentialShape a sh:NodeShape ;
-    sh:targetClass ceterms:AssociateDegree, ceterms:Credential ;
-    sh:property ex:credentialNameShape, ex:credentialDescriptionShape .
+# CTDL namespaces 
+@prefix : <https://purl.org/ctdl/shapes/> .
+@prefix ceterms: <https://purl.org/ctdl/terms/> .
+@prefix credentialStat: <https://purl.org/ctdl/vocabs/credentialStat/> .
 
-ex:credentialNameShape a sh:PropertyShape ;
+: owl:imports <https://credreg.net/ctdl/schema/encoding/turtle> .
+# not all tools support owl imports
+# itb validator, need to check "load imports" option
+# pyshacl, need to use -e https://credreg.net/ctdl/schema/encoding/turtle flag
+# pyshacl also needs the -i rdfs (or both) option set
+
+:nodePresent a sh:NodeShape ;
+  rdfs:label "Credential existence check"@en ;
+  rdfs:comment "Shape to check there is at least one Credential node"@en ;
+  sh:targetNode ceterms:Credential ; # subtypes included in imported RDFS
+  sh:property [
+    sh:path [ sh:inversePath rdf:type ] ;
+    sh:minCount 1 ;
+  ] ;
+  sh:message "There must be at least one Credential node"@en .
+
+:credentialShape a sh:NodeShape ;
+    sh:targetClass ceterms:Credential;
+    sh:property :nameShape, :descriptionShape , :credentialStatusTypeShape, :subjectWebpageShape, :ctidShape, :inLanguageShape ;
+    sh:or ( :ownedByShape :offeredByShape ) .
+
+:nameShape a sh:PropertyShape ;
     sh:path ceterms:name ;
     sh:minCount 1 ;
     sh:maxCount 1 ;
-    sh:datatype xsd:string ;
-    sh:name "Credential name" .
+    sh:datatype rdf:langString ;
+    sh:severity sh:Violation .
 
-ex:credentialDescriptionShape a sh:PropertyShape ;
+:descriptionShape a sh:PropertyShape ;
     sh:path ceterms:description ;
     sh:minCount 1 ;
     sh:maxCount 1 ;
+    sh:datatype rdf:langString ;
+    sh:severity sh:Violation .
+
+:credentialStatusTypeShape a sh:PropertyShape ;
+    sh:path ceterms:credentialStatusType ;
+    sh:minCount 1 ;
+    sh:maxCount 1 ;
+    sh:nodeKind sh:BlankNodeOrIRI ;
+    sh:node [
+        sh:class ceterms:CredentialAlignmentObject ;
+        sh:property [
+            sh:path ceterms:targetNode ;
+            sh:in (
+                 credentialStat:Active credentialStat:Deprecated credentialStat:Probationary credentialStat:Suspended credentialStat:TeachOut credentialStat:Superseded 
+            ) 
+        ] 
+    ] ;
+    sh:severity sh:Violation .
+
+:subjectWebpageShape a sh:PropertyShape ;
+    sh:minCount 1 ;
+    sh:path ceterms:subjectWebpage ;
+    sh:datatype xsd:anyURI ;
+    sh:severity sh:Violation .
+
+:ctidShape a sh:PropertyShape ;
+    sh:minCount 1 ;
+    sh:maxCount 1 ;
+    sh:pattern "^ce-[0-9a-f]{8}-([0-9a-f]{4}-){3}[0-9a-f]{12}$";
     sh:datatype xsd:string ;
-    sh:name "Credential description" .
+    sh:path ceterms:ctid ;
+    sh:severity sh:Violation .
+
+:inLanguageShape a sh:PropertyShape ;
+    sh:minCount 1 ;
+    sh:path ceterms:inLanguage ;
+    sh:nodeKind sh:Literal ;
+    sh:datatype xsd:language ;
+    sh:severity sh:Violation .
+
+:ownedByShape a sh:PropertyShape ;
+    sh:minCount 1 ;
+    sh:path ceterms:ownedBy ;
+    sh:datatype xsd:anyURI ;
+    sh:severity sh:Violation .
+
+:offeredByShape a sh:PropertyShape ;
+    sh:minCount 1 ;
+    sh:path ceterms:offeredBy ;
+    sh:datatype xsd:anyURI ;
+    sh:severity sh:Violation .
