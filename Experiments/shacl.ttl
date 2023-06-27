@@ -26,10 +26,18 @@
   ] ;
   sh:message "There must be at least one Credential node"@en .
 
+
+# Main Node shape for Credential
+
 :credentialShape a sh:NodeShape ;
-    sh:targetClass ceterms:Credential;
+    sh:targetClass ceterms:Credential; # subtypes included in imported RDFS
+    # required properties.
     sh:property :nameShape, :descriptionShape , :credentialStatusTypeShape, :subjectWebpageShape, :ctidShape, :inLanguageShape ;
-    sh:or ( :ownedByShape :offeredByShape ) .
+    sh:or ( :ownedByShape :offeredByShape ) ;
+    # recommended benchmark properties.
+    sh:property :keywordShape .
+
+# Property shapes for registry required properties
 
 :nameShape a sh:PropertyShape ;
     sh:path ceterms:name ;
@@ -93,3 +101,13 @@
     sh:path ceterms:offeredBy ;
     sh:datatype xsd:anyURI ;
     sh:severity sh:Violation .
+
+# Property shapes for benchmark recommendations
+:keywordShape a sh:PropertyShape ;
+    sh:minCount 1 ;
+    sh:path ceterms:keyword ;
+    sh:datatype rdf:langString ;
+    sh:message "Keyword [langString] property is recommended but not found."@en ;
+    sh:severity sh:Warning .
+
+# +++ more to do
